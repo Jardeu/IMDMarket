@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">IMDMarket</string>
+    <string name="header_title">IMDMARKET</string>
+    <string name="login_label">Login:</string>
+    <string name="senha_label">Senha:</string>
+    <string name="login_hint">Login</string>
+    <string name="senha_hint">Senha</string>
+    <string name="login_btn">Entrar</string>
+    <string name="forget_password_btn">Esqueci minha senha/login</string>
+    <string name="text_view_menu">O que deseja fazer?</string>
+    <string name="cadastrar_btn">Cadastrar produto</string>
+    <string name="listar_btn">Listar produtos</string>
+    <string name="alterar_btn">Alterar produto</string>
+    <string name="deletar_btn">Deletar produto</string>
+</resources>
