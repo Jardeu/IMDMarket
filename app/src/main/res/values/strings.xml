@@ -12,4 +12,18 @@
     <string name="listar_btn">Listar produtos</string>
     <string name="alterar_btn">Alterar produto</string>
     <string name="deletar_btn">Deletar produto</string>
+    <string name="label_codigo_produto">Código do produto:</string>
+    <string name="label_nome_produto">Nome do produto:</string>
+    <string name="label_descricao_produto">Descrição do produto:</string>
+    <string name="label_estoque">Estoque:</string>
+    <string name="salvar_btn">Salvar</string>
+    <string name="salvar_alteracao_btn">Alterar</string>
+    <string name="deletar_produto_btn">Deletar</string>
+    <string name="limpar_btn">Limpar</string>
+    <string name="voltar_btn">Voltar</string>
+    <string name="text_view_listar">Lista de produtos</string>
+    <string name="text_view_recuperar">Recuperar senha</string>
+    <string name="nova_senha_label">Nova Senha:</string>
+    <string name="nova_senha_hint">Digite a nova senha</string>
+    <string name="salvar_nova_senha_btn">Salvar nova senha</string>
 </resources>

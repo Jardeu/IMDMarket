@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlterarActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/primary"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="@string/header_title"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textViewAlterar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/alterar_btn"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/labelCodigo2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/labelCodigo2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/label_codigo_produto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextCodigo2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAlterar"
+            tools:ignore="UnknownId" />
+
+        <EditText
+            android:id="@+id/editTextCodigo2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/labelNome2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelCodigo2"
+            tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
+
+        <TextView
+            android:id="@+id/labelNome2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/label_nome_produto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextNome2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCodigo2" />
+
+        <EditText
+            android:id="@+id/editTextNome2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/labelDescricao2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelNome2"
+            tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
+
+        <TextView
+            android:id="@+id/labelDescricao2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/label_descricao_produto"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextDescricao2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNome2" />
+
+        <EditText
+            android:id="@+id/editTextDescricao2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/labelEstoque2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelDescricao2"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/labelEstoque2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/label_estoque"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextEstoque2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDescricao2" />
+
+        <EditText
+            android:id="@+id/editTextEstoque2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:ems="10"
+            android:inputType="number"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnSalvarAlteracoes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelEstoque2"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/btnSalvarAlteracoes"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/primary"
+            android:text="@string/salvar_alteracao_btn"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnLimpar2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextEstoque2" />
+
+        <Button
+            android:id="@+id/btnLimpar2"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/primary"
+            android:text="@string/limpar_btn"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnSalvarAlteracoes"
+            app:layout_constraintTop_toBottomOf="@+id/editTextEstoque2"
+            app:layout_constraintVertical_bias="0.502" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

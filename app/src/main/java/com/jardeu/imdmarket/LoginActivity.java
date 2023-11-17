@@ -3,18 +3,19 @@ package com.jardeu.imdmarket;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LoginActivity extends AppCompatActivity {
-    EditText etLogin;
-    EditText etPassword;
+import java.util.List;
 
-    Button btnEntrar;
+public class LoginActivity extends AppCompatActivity {
+    EditText etLogin, etPassword;
+    Button btnEntrar, btnRecuperarSenha;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         etLogin = findViewById(R.id.editTextLogin);
         etPassword = findViewById(R.id.editTextPassword);
         btnEntrar = findViewById(R.id.btnEntrar);
+        btnRecuperarSenha = findViewById(R.id.btnRecuperarSenha);
 
         SharedPreferences dados = getSharedPreferences("LoginInformations", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = dados.edit();
@@ -32,12 +34,25 @@ public class LoginActivity extends AppCompatActivity {
             editor.apply();
         }
 
+        BancoAdmin admin = new BancoAdmin(this, "BancoProdutos", null, 1);
+        SQLiteDatabase banco = admin.getWritableDatabase();
+
+        BancoAdmin.lerDadosBanco(banco);
+
         btnEntrar.setOnClickListener(view -> {
-            SharedPreferences dados1 = getSharedPreferences("LoginInformations", Context.MODE_PRIVATE);
-            if(etLogin.getText().toString().equals(dados1.getString("login", ""))){
+            if(etLogin.getText().toString().equals(dados.getString("login", ""))
+                    && etPassword.getText().toString().equals(dados.getString("senha", "")))
+            {
                 Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                 startActivity(intent);
+            } else {
+                Toast.makeText(this, "Login ou Senha está incorreto", Toast.LENGTH_LONG).show();
             }
+        });
+
+        btnRecuperarSenha.setOnClickListener(view -> {
+            Intent intent = new Intent(LoginActivity.this, RecuperarSenhaActivity.class);
+            startActivity(intent);
         });
     }
 }
